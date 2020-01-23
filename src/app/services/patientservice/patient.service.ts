@@ -17,7 +17,7 @@ export class PatientService {
     this.jsonUrl = url;
   }
 
-  public getPatientList():any{
+  public getPatientList(): any{
     return this.patientList;
   }
 }
