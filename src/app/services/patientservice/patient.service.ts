@@ -10,7 +10,7 @@ export class PatientService {
   private patientList: any = [];
 
   constructor(private httpClinet: HttpClient) { 
-    this.httpClinet.get('assets/patients.json').subscribe(data=> this.patientList = data);
+    this.httpClinet.get('assets/mockdata/patients.json').subscribe(data=> this.patientList = data);
   }
 
   public setJsonUrl(url: String): void {
