@@ -1,0 +1,21 @@
+<h2>Patient Creation form</h2>
+<form [formGroup] = "createForm" (ngSubmit) = " onSubmit(createForm.value)">
+    <label for="name">Name</label>
+    <input type="text" formControlName="name"/>
+    <label for="age">Age</label>
+    <input type="text" formControlName="age"/>
+    <label for="name">Gender</label>
+    <input type="radio" formControlName="gender" name="gender" value="male"/>Male
+    <input type="radio" fromConrolName="gender" name="gender" value="female"/>Female
+    <label for="username">Username</label>
+    <input type="text" formControlName="username"/>
+    <label for="password">Password</label>
+    <input type="password" formControlName="password"/>
+    <label for="bloodgroup">BloodGroup</label>
+    <input type="text" formControlName="bloodgroup"/>
+    <label for="phone">Phone number</label>
+    <input type="text" formControlName="phone"/>
+    
+    <button type="submit">Submit</button>
+
+</form>

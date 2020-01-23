@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { PatientService } from '../services/patientservice/patient.service';
+import { ActivatedRoute } from '@angular/router';
+import { Patient } from '../models/patient';
 
 @Component({
   selector: 'app-patientcard',
@@ -8,11 +10,11 @@ import { PatientService } from '../services/patientservice/patient.service';
 })
 export class PatientcardComponent implements OnInit {
 
-  private patientList :any = [];
-  constructor(private patientService:PatientService) { }
+  private patient: Patient;
+  constructor(private patientService: PatientService, private route: ActivatedRoute) { }
 
   ngOnInit() {
-    this.patientList = this.patientService.getPatientList();
+    this.patientService.getPatientList().subscribe(data => {this.patient = data; console.log(this.patient.address)});
   }
 
 }

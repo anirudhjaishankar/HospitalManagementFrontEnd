@@ -4,6 +4,8 @@ import { DatagalleryoverlayComponent } from './datagalleryoverlay/datagalleryove
 import { LoginformComponent } from './loginform/loginform.component';
 import { PatientcardComponent } from './patientcard/patientcard.component';
 import { DoctorcardComponent } from './doctorcard/doctorcard.component';
+import { CreatePatientFormComponent } from './create-patient-form/create-patient-form.component';
+import { CreateDoctorFormComponent } from './create-doctor-form/create-doctor-form.component';
 
 
 const routes: Routes = [
@@ -24,6 +26,19 @@ const routes: Routes = [
         component:DoctorcardComponent
       }
     ]
+  },
+  {
+    path:'create',
+    children:[
+    {
+      path:'patient',
+      component:CreatePatientFormComponent
+    },
+    {
+      path:'doctor',
+      component:CreateDoctorFormComponent
+    }
+  ]
   }
 ];
 

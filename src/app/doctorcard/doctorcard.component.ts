@@ -13,7 +13,7 @@ export class DoctorcardComponent implements OnInit {
   constructor(private doctorService : DoctorService) { }
 
   ngOnInit() {
-    this.doctorList = this.doctorService.getDoctorList();
+    this.doctorService.getDoctorList().subscribe(data=> this.doctorList = data);
   }
 
 }

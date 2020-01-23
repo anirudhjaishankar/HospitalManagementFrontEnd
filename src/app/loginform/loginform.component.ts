@@ -21,7 +21,7 @@ export class LoginformComponent implements OnInit {
   onSubmit() {
     this.formService.setIsLogged(true);
     this.formService.setUsername(this.username);
-    this.router.navigate(['details/doctors']);
+    this.router.navigate(['details/patients']);
     console.log(this.username, this.password);
   }
 

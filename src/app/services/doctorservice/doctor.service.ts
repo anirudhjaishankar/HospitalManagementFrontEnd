@@ -7,19 +7,11 @@ import { HttpClient } from '@angular/common/http';
 })
 export class DoctorService {
 
-  private jsonUrl: String;
-  private doctorList: any = [];
-  constructor(private httpClient: HttpClient) {
-    this.httpClient.get('assets/mockdata/doctors.json').subscribe(data=> this.doctorList = data);
-  }
+  private jsonUrl: string = "assets/mockdata/doctors.json";
+  constructor(private httpClient: HttpClient) { }
 
   public getDoctorList(): any {
-    return this.doctorList;
+    return this.httpClient.get(this.jsonUrl);
   }
-
-  public setJsonUrl(url: String): void {
-    this.jsonUrl = url;
-  }
-
 
 }
