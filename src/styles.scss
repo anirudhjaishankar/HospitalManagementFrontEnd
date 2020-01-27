@@ -1,1 +1,32 @@
 /* You can add global styles to this file, and also import other style files */
+
+html,
+body {
+  height: 100%;
+}
+body {
+  margin: 0;
+  font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+.container {
+  margin-left: 5%;
+  margin-right: 5%;
+}
+.form-container {
+  margin-left: 20%;
+  margin-right: 20%;
+}
+.form-field {
+  width: 100%;
+  display: block;
+}
+.form-radio {
+  margin-left: 10%;
+}
+.submit {
+  margin-left: 40% !important;
+}
+.form-header {
+  margin-left: 35%;
+  margin-top: 2%;
+}

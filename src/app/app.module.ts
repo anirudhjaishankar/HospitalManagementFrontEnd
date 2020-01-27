@@ -12,6 +12,8 @@ import { DoctorcardComponent } from './doctorcard/doctorcard.component';
 import { PatientcardComponent } from './patientcard/patientcard.component';
 import { CreatePatientFormComponent } from './create-patient-form/create-patient-form.component';
 import { CreateDoctorFormComponent } from './create-doctor-form/create-doctor-form.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { MaterialModule } from './material.module';
 
 
 @NgModule({
@@ -30,7 +32,9 @@ import { CreateDoctorFormComponent } from './create-doctor-form/create-doctor-fo
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    BrowserAnimationsModule,
+    MaterialModule
   ],
   providers: [],
   bootstrap: [AppComponent]
