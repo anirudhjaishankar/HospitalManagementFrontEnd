@@ -7,8 +7,11 @@ import {
   MatInputModule,
   MatRadioModule,
   MatButtonModule,
-  MatCardModule
+  MatCardModule,
+  MatTabsModule
 } from '@angular/material';
+
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 @NgModule({
   imports: [
@@ -19,7 +22,9 @@ import {
     MatInputModule,
     MatRadioModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule,
+    MatTabsModule
   ],
   exports: [
     MatToolbarModule,
@@ -29,7 +34,9 @@ import {
     MatInputModule,
     MatRadioModule,
     MatButtonModule,
-    MatCardModule
+    MatCardModule,
+    FlexLayoutModule,
+    MatTabsModule
   ]
 })
 export class MaterialModule { }

@@ -1,4 +1,11 @@
 <div>
-    header
-    <span *ngIf="isLogged === true">{{username}}</span>
+    <mat-toolbar color="primary">
+        H+
+        <div>
+            <div *ngIf="isLogged === true">
+                Welcome {{username}}
+            </div>
+        </div>    
+    </mat-toolbar>
 </div>
+

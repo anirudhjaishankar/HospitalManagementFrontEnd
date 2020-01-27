@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormService } from '../services/formservice/form.service';
 import { Router } from '@angular/router';
+import { FormGroup, FormBuilder } from '@angular/forms';
 
 @Component({
   selector: 'app-loginform',
@@ -8,21 +9,27 @@ import { Router } from '@angular/router';
   styleUrls: ['./loginform.component.scss']
 })
 export class LoginformComponent implements OnInit {
+  
+  private loginForm:FormGroup;
 
-  private username: String;
-  private password: String;
   constructor(
     private formService: FormService,
-    private router: Router
+    private router: Router,
+    private formBuilder: FormBuilder 
   ) { }
 
-  ngOnInit() { }
+  ngOnInit() { 
+    this.loginForm = this.formBuilder.group({
+      username:'',
+      password:''
+    });
+  }
 
-  onSubmit() {
+  onSubmit(loginData) {
     this.formService.setIsLogged(true);
-    this.formService.setUsername(this.username);
+    this.formService.setUsername(loginData.username);
     this.router.navigate(['details/patients']);
-    console.log(this.username, this.password);
+    console.log(loginData.username, loginData.password);
   }
 
 }

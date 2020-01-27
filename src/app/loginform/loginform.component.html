@@ -1,9 +1,19 @@
 <router-outlet></router-outlet>
 <app-header></app-header>
-<div>
-    <input type="text" [(ngModel)] = "username">
-    <input type="password" [(ngModel)] = "password">
-    <button (click)="onSubmit()">Submit</button>
+<div class="container">
+    <div class="form-container">
+        <mat-card class="card">  
+            <h1 class="login-header">Login</h1>  
+            <form [formGroup]='loginForm' (ngSubmit) = onSubmit(loginForm.value)>
+                <mat-form-field class="login-input">
+                    <input matInput placeholder="Username" type="text" formControlName = "username">
+                </mat-form-field>
+                <mat-form-field class="login-input">
+                    <input matInput placeholder="password" type="password" formControlName = "password">
+                </mat-form-field>
+
+                <button mat-button color="primary" type="submit" class="submit">Submit</button>
+            </form>
+        </mat-card>
+    </div>
 </div>
-
-
