@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup } from '@angular/forms';
+import { FormBuilder, FormGroup, FormControl, Validators } from '@angular/forms';
 import { PatientService } from '../services/patientservice/patient.service';
 import { Patient } from '../models/patient';
 import { Address } from '../models/address';
@@ -18,7 +18,7 @@ export class CreatePatientFormComponent implements OnInit {
 
   ngOnInit() {
     this.createForm = this.formBuilder.group({
-      username: '',
+      username: new FormControl('',[Validators.minLength(5), Validators.max(15)]),
       password: '',
       name: '',
       age: '',
@@ -43,7 +43,7 @@ export class CreatePatientFormComponent implements OnInit {
     this.patient.role = 3;
     this.patient.address = this.address;
     console.log(this.patient);
-    this.patientService.createPatient(patientData).subscribe(result => console.log(result));
+    this.patientService.createPatient(this.patient).subscribe(result => console.log(result));
     this.createForm.reset();
   }
 

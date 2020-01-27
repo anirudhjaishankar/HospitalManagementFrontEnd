@@ -8,10 +8,17 @@ import { Patient } from '../../models/patient';
 })
 export class PatientService {
 
-  private readUrl: string = "http://localhost:8080/patients/read/4";
+  private readUrl: string = "http://localhost:8080/patients/readAllPatients";
+  private readIdUrl: string = "http:..localhost:8080/patients/read/" 
   private createUrl: string ="http://localhost:8080/patients/create";
+  private deleteUrl: string = "http://localhost:8080/patients/delete/";
+  private updateUrl: string = "http://localhost:8080/patients/update;"
 
   constructor(private httpClient: HttpClient) {
+  }
+
+  public getPatient(patientId: Number): Observable<Patient>{
+    return this.httpClient.get<Patient>(this.readIdUrl+patientId);
   }
   
   public getPatientList(): Observable<Patient> {
@@ -21,8 +28,11 @@ export class PatientService {
   public createPatient(patient: Patient): Observable<string>{
     return this.httpClient.post<string>(this.createUrl, patient);
   }
+  public updatePatient(updatedPatient : Patient): Observable<string>{
+    return this.httpClient.put<string>(this.updateUrl, updatedPatient);
+  }
 
-  // public deletePatient(patientId : Number): Observable<string>{
-  //   return this.httpClient.delete<Number>(this.deleteUrl, Number.toString(patientId));
-  // }
+  public deletePatient(patientId : Number): Observable<Number>{
+    return this.httpClient.delete<Number>(this.deleteUrl);
+  }
 }
