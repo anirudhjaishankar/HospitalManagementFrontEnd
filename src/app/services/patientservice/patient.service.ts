@@ -21,4 +21,8 @@ export class PatientService {
   public createPatient(patient: Patient): Observable<string>{
     return this.httpClient.post<string>(this.createUrl, patient);
   }
+
+  // public deletePatient(patientId : Number): Observable<string>{
+  //   return this.httpClient.delete<Number>(this.deleteUrl, Number.toString(patientId));
+  // }
 }

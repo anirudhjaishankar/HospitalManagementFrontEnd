@@ -22,7 +22,7 @@ export class CreatePatientFormComponent implements OnInit {
       name:'',
       age:'',
       gender:'',
-      bloodgroup:'',
+      bloodGroup:'',
       phone:''
     });
   }
