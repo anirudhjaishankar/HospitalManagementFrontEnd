@@ -1,12 +1,9 @@
 import { Address } from './address';
-
-export class Doctor {
+export class User{
     name: string;
-    username: string;
-    password: string;
     age: number;
     gender: string;
-    phone: number;
-    specilization: string;
+    username: string;
+    password: string;
     address: Address;
 }

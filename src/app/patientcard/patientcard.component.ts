@@ -1,6 +1,4 @@
-import { Component, OnInit } from '@angular/core';
-import { PatientService } from '../services/patientservice/patient.service';
-import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit, Input } from '@angular/core';
 import { Patient } from '../models/patient';
 
 @Component({
@@ -10,11 +8,10 @@ import { Patient } from '../models/patient';
 })
 export class PatientcardComponent implements OnInit {
 
-  private patient: Patient;
-  constructor(private patientService: PatientService, private route: ActivatedRoute) { }
+  @Input() patient: Patient;
+  constructor() { }
 
   ngOnInit() {
-    this.patientService.getPatientList().subscribe(data => {this.patient = data; console.log(this.patient.address)});
   }
 
 }

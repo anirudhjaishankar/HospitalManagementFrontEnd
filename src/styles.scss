@@ -36,9 +36,18 @@ body {
 .card{
   margin-top:5%;
 }
-
 .login-input{
   display:block;
   width:60%;
   margin-left:20%;
+}
+.card-container{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:flex-start;
+  align-items:flex-start;
+}
+.data-card{
+  margin:3%;
 }

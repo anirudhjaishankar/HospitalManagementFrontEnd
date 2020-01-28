@@ -18,7 +18,7 @@ export class CreatePatientFormComponent implements OnInit {
 
   ngOnInit() {
     this.createForm = this.formBuilder.group({
-      username: new FormControl('',[Validators.minLength(5), Validators.max(15)]),
+      username: new FormControl('',[Validators.required, Validators.minLength(5)]),
       password: '',
       name: '',
       age: '',

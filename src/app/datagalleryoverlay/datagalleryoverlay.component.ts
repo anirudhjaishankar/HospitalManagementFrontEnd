@@ -8,12 +8,10 @@ import { FormService } from '../services/formservice/form.service';
 })
 export class DatagalleryoverlayComponent implements OnInit {
   
-  username:String;
   
   constructor(private fromService : FormService) { }
 
   ngOnInit() {
-    this.username = this.fromService.getUsername();
   }
 
 }

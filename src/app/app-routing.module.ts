@@ -2,8 +2,8 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { DatagalleryoverlayComponent } from './datagalleryoverlay/datagalleryoverlay.component'; 
 import { LoginformComponent } from './loginform/loginform.component';
-import { PatientcardComponent } from './patientcard/patientcard.component';
-import { DoctorcardComponent } from './doctorcard/doctorcard.component';
+import { PatientListComponent } from './patient-list/patient-list.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 import { CreatePatientFormComponent } from './create-patient-form/create-patient-form.component';
 import { CreateDoctorFormComponent } from './create-doctor-form/create-doctor-form.component';
 
@@ -19,11 +19,11 @@ const routes: Routes = [
     children:[
       {
         path:'patients',
-        component:PatientcardComponent
+        component:PatientListComponent
       },
       {
         path:'doctors',
-        component:DoctorcardComponent
+        component:DoctorListComponent
       }
     ]
   },

@@ -17,6 +17,7 @@
                 </mat-radio-group>
                 <mat-form-field class="form-field">
                     <input type="text" formControlName="username" matInput placeholder="Username" />
+                    <mat-error *ngIf="createForm.username.errors.minlength">Username Min length 5</mat-error>
                 </mat-form-field>
                 <mat-form-field class="form-field">
                     <input type="password" formControlName="password" matInput placeholder="Password" />

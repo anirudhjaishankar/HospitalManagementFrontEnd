@@ -1,14 +1,8 @@
-import { Address } from './address';
+import { User } from './user';
 
 export class Patient {
-    id: number;
-    role: number;
-    name: string;
-    username: string;
-    password: string;
-    age: number;
-    gender: string;
+    pkPatientId: number;
     phone: number;
     bloodGroup: string;
-    address: Address;
+    userDetails: User;
 }

@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
-import { DoctorService } from '../services/doctorservice/doctor.service';
+import { Component, OnInit, Input } from '@angular/core';
+import { Doctor } from '../models/doctor';
+import { DoctorService } from '../services/doctorservice/doctor.service'; 
 
 @Component({
   selector: 'app-doctorcard',
@@ -8,12 +9,12 @@ import { DoctorService } from '../services/doctorservice/doctor.service';
 })
 export class DoctorcardComponent implements OnInit {
 
-  doctorList : any = [];
+  @Input() doctor: Doctor;
 
   constructor(private doctorService : DoctorService) { }
 
   ngOnInit() {
-    this.doctorService.getDoctorList().subscribe(data=> this.doctorList = data);
+    
   }
 
 }

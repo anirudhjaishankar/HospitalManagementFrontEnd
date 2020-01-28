@@ -14,6 +14,8 @@ import { CreatePatientFormComponent } from './create-patient-form/create-patient
 import { CreateDoctorFormComponent } from './create-doctor-form/create-doctor-form.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MaterialModule } from './material.module';
+import { PatientListComponent } from './patient-list/patient-list.component';
+import { DoctorListComponent } from './doctor-list/doctor-list.component';
 
 
 @NgModule({
@@ -25,7 +27,9 @@ import { MaterialModule } from './material.module';
     DoctorcardComponent,
     PatientcardComponent,
     CreatePatientFormComponent,
-    CreateDoctorFormComponent
+    CreateDoctorFormComponent,
+    PatientListComponent,
+    DoctorListComponent
   ],
   imports: [
     BrowserModule,

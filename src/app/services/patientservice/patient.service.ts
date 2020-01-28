@@ -2,13 +2,14 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { Patient } from '../../models/patient';
+import { ResponseObject } from 'src/app/models/responseobject';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PatientService {
 
-  private readUrl: string = "http://localhost:8080/patients/readAllPatients";
+  private readUrl: string = "http://localhost:8080/patients/read/getAllPatients";
   private readIdUrl: string = "http:..localhost:8080/patients/read/" 
   private createUrl: string ="http://localhost:8080/patients/create";
   private deleteUrl: string = "http://localhost:8080/patients/delete/";
@@ -17,12 +18,12 @@ export class PatientService {
   constructor(private httpClient: HttpClient) {
   }
 
-  public getPatient(patientId: Number): Observable<Patient>{
-    return this.httpClient.get<Patient>(this.readIdUrl+patientId);
+  public getPatient(patientId: Number): Observable<ResponseObject<Patient>>{
+    return this.httpClient.get<ResponseObject<Patient>>(this.readIdUrl+patientId);
   }
   
-  public getPatientList(): Observable<Patient> {
-    return this.httpClient.get<Patient>(this.readUrl);
+  public getPatientList(): Observable<ResponseObject<Patient[]>> {
+    return this.httpClient.get<ResponseObject<Patient[]>>(this.readUrl);
   }
 
   public createPatient(patient: Patient): Observable<string>{
