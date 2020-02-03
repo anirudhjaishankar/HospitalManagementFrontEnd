@@ -9,11 +9,11 @@ import { ResponseObject } from 'src/app/models/responseobject';
 })
 export class PatientService {
 
-  private readUrl: string = "http://localhost:8080/patients/read/getAllPatients";
-  private readIdUrl: string = "http:..localhost:8080/patients/read/" 
-  private createUrl: string ="http://localhost:8080/patients/create";
-  private deleteUrl: string = "http://localhost:8080/patients/delete/";
-  private updateUrl: string = "http://localhost:8080/patients/update;"
+  private readUrl: string = "http://hms-env.m2uysb5yw7.us-east-1.elasticbeanstalk.com:8080/patients/getAllPatients";
+  private readIdUrl: string = "http:..localhost:8080/patients/read/" ;
+  private createUrl: string ="http://hms-env.m2uysb5yw7.us-east-1.elasticbeanstalk.com:8080/patients/create";
+  private deleteUrl: string = "http://hms-env.m2uysb5yw7.us-east-1.elasticbeanstalk.com:8080/patients/delete/";
+  private updateUrl: string = "http://hms-env.m2uysb5yw7.us-east-1.elasticbeanstalk.com:8080/patients/update;"
 
   constructor(private httpClient: HttpClient) {
   }

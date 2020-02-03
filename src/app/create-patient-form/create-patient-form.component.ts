@@ -18,7 +18,7 @@ export class CreatePatientFormComponent implements OnInit {
 
   ngOnInit() {
     this.createForm = this.formBuilder.group({
-      username: new FormControl('',[Validators.required, Validators.minLength(5)]),
+      username: '',
       password: '',
       name: '',
       age: '',
@@ -30,7 +30,7 @@ export class CreatePatientFormComponent implements OnInit {
 
   public onSubmit(patientData) {
     this.patient = patientData;
-    this.address = {
+    this.patient.userDetails.address = {
       id: 0,
       flatNumber: "F6",
       flatName: "blue spring",
@@ -40,8 +40,8 @@ export class CreatePatientFormComponent implements OnInit {
       stateName: "tamil nadu",
       pincode: 600060
     }
-    this.patient.role = 3;
-    this.patient.address = this.address;
+    this.patient.userDetails.role = 2;
+    this.patient.userDetails.address = this.address;
     console.log(this.patient);
     this.patientService.createPatient(this.patient).subscribe(result => console.log(result));
     this.createForm.reset();

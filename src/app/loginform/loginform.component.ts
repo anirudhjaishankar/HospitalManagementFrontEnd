@@ -10,7 +10,7 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class LoginformComponent implements OnInit {
   
-  private loginForm:FormGroup;
+  public loginForm:FormGroup;
 
   constructor(
     private formService: FormService,

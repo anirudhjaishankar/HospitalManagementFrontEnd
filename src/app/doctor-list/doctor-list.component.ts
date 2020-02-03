@@ -13,7 +13,7 @@ export class DoctorListComponent implements OnInit {
   constructor(private doctorService : DoctorService) { }
 
   ngOnInit() {
-    this.doctorService.getDoctorList().subscribe(data=> this.doctorList = data);
+    this.doctorService.getDoctorList().subscribe(response=> this.doctorList = response.data);
   }
 
 }

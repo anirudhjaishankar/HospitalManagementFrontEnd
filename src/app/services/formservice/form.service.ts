@@ -6,16 +6,16 @@ import { Injectable } from '@angular/core';
 
 export class FormService {
 
-  private username: String;
+  private username: string;
   private isLogged : boolean;
 
   constructor() { }
 
-  public setUsername(username : String){
+  public setUsername(username : string){
     this.username = username;
   }
 
-  public getUsername() : String {
+  public getUsername() : string {
     return this.username;
   }
 

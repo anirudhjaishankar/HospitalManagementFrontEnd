@@ -8,8 +8,8 @@ import { FormService } from '../services/formservice/form.service';
 })
 export class HeaderComponent implements OnInit {
 
-  private isLogged : boolean;
-  private username : String;
+  private isLogged: boolean;
+  private username: string;
 
   constructor(private service: FormService) { }
 
@@ -22,12 +22,16 @@ export class HeaderComponent implements OnInit {
     this.isLogged = this.service.getIsLogged();
   }
 
-  public setUsername(username : String) : void {
+  public setUsername(username : string) : void {
     this.username = username;
   }
 
-  public getUsername() : String {
+  public getUsername(): string {
     return this.username;
+  }
+  
+  public getIsLogged(): boolean{
+    return this.isLogged;
   }
 
 

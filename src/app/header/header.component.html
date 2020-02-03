@@ -2,8 +2,8 @@
     <mat-toolbar color="primary">
         H+
         <div>
-            <div *ngIf="isLogged === true">
-                Welcome {{username}}
+            <div *ngIf="getIsLogged() === true">
+                Welcome {{getUsername()}}
             </div>
         </div>    
     </mat-toolbar>
